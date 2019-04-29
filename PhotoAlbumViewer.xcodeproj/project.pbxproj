@@ -11,6 +11,8 @@
 		F105237E22772B76007FB494 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F105237D22772B76007FB494 /* Assets.xcassets */; };
 		F105238122772B76007FB494 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F105237F22772B76007FB494 /* LaunchScreen.storyboard */; };
 		F105238C22772B76007FB494 /* PhotoAlbumViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F105238B22772B76007FB494 /* PhotoAlbumViewerTests.swift */; };
+		F1CEB18C22772D17004F5751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1CEB18B22772D17004F5751 /* Main.storyboard */; };
+		F1CEB18E22772E24004F5751 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CEB18D22772E24004F5751 /* AlbumViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,8 @@
 		F105238722772B76007FB494 /* PhotoAlbumViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoAlbumViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F105238B22772B76007FB494 /* PhotoAlbumViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumViewerTests.swift; sourceTree = "<group>"; };
 		F105238D22772B76007FB494 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1CEB18B22772D17004F5751 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F1CEB18D22772E24004F5751 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,9 +77,11 @@
 		F105237A22772B74007FB494 /* PhotoAlbumViewer */ = {
 			isa = PBXGroup;
 			children = (
+				F1CEB19022772E65004F5751 /* Albums */,
 				F105237B22772B74007FB494 /* AppDelegate.swift */,
 				F105237D22772B76007FB494 /* Assets.xcassets */,
 				F105237F22772B76007FB494 /* LaunchScreen.storyboard */,
+				F1CEB18B22772D17004F5751 /* Main.storyboard */,
 				F105238222772B76007FB494 /* Info.plist */,
 			);
 			path = PhotoAlbumViewer;
@@ -88,6 +94,14 @@
 				F105238D22772B76007FB494 /* Info.plist */,
 			);
 			path = PhotoAlbumViewerTests;
+			sourceTree = "<group>";
+		};
+		F1CEB19022772E65004F5751 /* Albums */ = {
+			isa = PBXGroup;
+			children = (
+				F1CEB18D22772E24004F5751 /* AlbumViewController.swift */,
+			);
+			path = Albums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +185,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1CEB18C22772D17004F5751 /* Main.storyboard in Resources */,
 				F105237E22772B76007FB494 /* Assets.xcassets in Resources */,
 				F105238122772B76007FB494 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -190,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1CEB18E22772E24004F5751 /* AlbumViewController.swift in Sources */,
 				F105237C22772B74007FB494 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
