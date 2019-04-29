@@ -13,6 +13,8 @@
 		F105238C22772B76007FB494 /* PhotoAlbumViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F105238B22772B76007FB494 /* PhotoAlbumViewerTests.swift */; };
 		F1CEB18C22772D17004F5751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1CEB18B22772D17004F5751 /* Main.storyboard */; };
 		F1CEB18E22772E24004F5751 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CEB18D22772E24004F5751 /* AlbumViewController.swift */; };
+		F1CEB19422772F75004F5751 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CEB19322772F75004F5751 /* Album.swift */; };
+		F1CEB19622773008004F5751 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CEB19522773008004F5751 /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		F105238D22772B76007FB494 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1CEB18B22772D17004F5751 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F1CEB18D22772E24004F5751 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
+		F1CEB19322772F75004F5751 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		F1CEB19522773008004F5751 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		F105237A22772B74007FB494 /* PhotoAlbumViewer */ = {
 			isa = PBXGroup;
 			children = (
+				F1CEB19222772F61004F5751 /* Models */,
 				F1CEB19022772E65004F5751 /* Albums */,
 				F105237B22772B74007FB494 /* AppDelegate.swift */,
 				F105237D22772B76007FB494 /* Assets.xcassets */,
@@ -102,6 +107,15 @@
 				F1CEB18D22772E24004F5751 /* AlbumViewController.swift */,
 			);
 			path = Albums;
+			sourceTree = "<group>";
+		};
+		F1CEB19222772F61004F5751 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F1CEB19322772F75004F5751 /* Album.swift */,
+				F1CEB19522773008004F5751 /* Photo.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,8 +219,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1CEB19622773008004F5751 /* Photo.swift in Sources */,
 				F1CEB18E22772E24004F5751 /* AlbumViewController.swift in Sources */,
 				F105237C22772B74007FB494 /* AppDelegate.swift in Sources */,
+				F1CEB19422772F75004F5751 /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
