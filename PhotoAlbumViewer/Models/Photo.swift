@@ -13,5 +13,8 @@ struct Photo: Decodable {
     let title: String
     let url: String
     let thumbnailUrl: String
-    let album: Album
+
+    static func photosForAlbum(albumId: Int) -> Resource<[Photo]> {
+        return Resource<[Photo]>(path: "/photos?albumId=\(albumId)")
+    }
 }
