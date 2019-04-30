@@ -43,8 +43,4 @@ class WebserviceTests: XCTestCase {
 
         wait(for: [exp], timeout: 1.0)
     }
-
-    func testLoadPicturesResource() {
-
-    }
 }

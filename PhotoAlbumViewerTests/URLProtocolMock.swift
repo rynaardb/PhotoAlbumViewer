@@ -27,7 +27,6 @@ class URLProtocolMock: URLProtocol {
             let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: "HTTP/1.1", headerFields: nil)
 
             self.client?.urlProtocol(self, didReceive: response!, cacheStoragePolicy: .notAllowed)
-
         }
 
         self.client?.urlProtocolDidFinishLoading(self)
