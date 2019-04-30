@@ -19,8 +19,10 @@ final class Webservice {
     }
 
     func load<T>(resource: Resource<T>, completion: @escaping (Result<T?, WebserviceError>) -> ()) {
-        let url = baseURL.appendingPathComponent(resource.path)
-        let request = URLRequest(url: url)
+        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
+        urlComponents.path = resource.path
+        urlComponents.queryItems = resource.queryItems
+        let request = URLRequest(url: urlComponents.url!)
 
         session.dataTask(with: request) { (data, response, error) in
             if let error = error  {

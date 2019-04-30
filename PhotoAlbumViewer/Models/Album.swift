@@ -14,6 +14,6 @@ extension Album {
     }
 
     static func albumsForUser(userId: Int) -> Resource<[Album]> {
-        return Resource<[Album]>(path: "/albums?userId=\(userId)")
+        return Resource<[Album]>(path: "/albums", queryItems: [URLQueryItem(name: "userId", value: "\(userId)")])
     }
 }
