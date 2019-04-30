@@ -25,4 +25,19 @@ class MainCoordinator: Coordinator {
             }
         }
     }
+
+    func showPhotosForAlbum(_ album: Album) {
+        Webservice().load(resource: Photo.photosForAlbum(albumId: album.id)) { result in
+            switch result {
+            case .success(let photos):
+                if let photos = photos {
+                    let photosVC = PhotosViewController(photos: photos)
+                    photosVC.coordinator = self
+                    self.navigationController.pushViewController(photosVC, animated: false)
+                }
+            case .failure(let error):
+                print("Handle error: \(error.localizedDescription)")
+            }
+        }
+    }
 }
