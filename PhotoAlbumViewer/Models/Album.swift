@@ -6,6 +6,7 @@ struct Album: Decodable {
     let id: Int
     let userId: Int
     let title: String
+    var photos: [Photo]?
 }
 
 extension Album {

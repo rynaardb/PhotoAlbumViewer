@@ -10,7 +10,13 @@ struct AlbumViewModel {
     }
 
     var numberOfPhotosString: String {
-        return "Photos: 0"
+        return "\(model.photos?.count ?? 0) photos in album"
+    }
+
+    var previewPhotos: [Photo]? {
+        guard let photos = model.photos else { return nil }
+
+        return Array(photos[...2])
     }
 
     init(model: Album) {

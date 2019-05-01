@@ -15,10 +15,35 @@ class MainCoordinator: Coordinator {
         Webservice().load(resource: Album.allAlbums()) { result in
             switch result {
             case .success(let albums):
+                let group = DispatchGroup()
+
                 if let albums = albums {
-                    let mainVC = AlbumViewController(albums: albums)
-                    mainVC.coordinator = self
-                    self.navigationController.pushViewController(mainVC, animated: false)
+                    var photoAlbums = [Album]()
+
+                    for var album in albums {
+                        group.enter()
+
+                        DispatchQueue.global(qos: .background).async {
+                            Webservice().load(resource: Photo.photosForAlbum(albumId: album.id), completion: { result in
+                                switch result {
+                                case .success(let photos):
+                                    album.photos = photos
+                                    photoAlbums.append(album)
+                                    group.leave()
+                                case .failure(let error):
+                                    print("Handle error: \(error.localizedDescription)")
+                                }
+                            })
+                        }
+                    }
+
+                    group.notify(queue: DispatchQueue.main) {
+                        DispatchQueue.main.async {
+                            let mainVC = AlbumViewController(albums: photoAlbums)
+                            mainVC.coordinator = self
+                            self.navigationController.pushViewController(mainVC, animated: false)
+                        }
+                    }
                 }
             case .failure(let error):
                 print("Handle error: \(error.localizedDescription)")
@@ -27,17 +52,16 @@ class MainCoordinator: Coordinator {
     }
 
     func showPhotosForAlbum(_ album: Album) {
-        Webservice().load(resource: Photo.photosForAlbum(albumId: album.id)) { result in
-            switch result {
-            case .success(let photos):
-                if let photos = photos {
-                    let photosVC = PhotosViewController(photos: photos)
-                    photosVC.coordinator = self
-                    self.navigationController.pushViewController(photosVC, animated: false)
-                }
-            case .failure(let error):
-                print("Handle error: \(error.localizedDescription)")
-            }
+        if let photos = album.photos {
+            let photosVC = PhotosViewController(photos: photos)
+            photosVC.coordinator = self
+            self.navigationController.pushViewController(photosVC, animated: false)
         }
+    }
+
+    func showPhotoDetails(viewModel: PhotoViewModel) {
+        let photoDetailsVC = PhotoDetailsViewController(viewModel: viewModel)
+        photoDetailsVC.coordinator = self
+        self.navigationController.pushViewController(photoDetailsVC, animated: false)
     }
 }
