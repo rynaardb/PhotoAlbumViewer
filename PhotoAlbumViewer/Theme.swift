@@ -8,6 +8,7 @@ struct Theme {
         window.tintColor = Colors.lightGray
 
         let navBar = UINavigationBar.appearance()
+        navBar.barStyle = .black
         navBar.barTintColor = Colors.darkGray1
         navBar.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: Colors.lightGray
