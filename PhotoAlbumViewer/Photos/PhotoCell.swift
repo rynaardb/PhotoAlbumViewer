@@ -6,17 +6,25 @@ import Kingfisher
 class PhotoCell: UICollectionViewCell {
     public var viewModel: PhotoViewModel! {
         didSet {
-            prepareLayout()
+            updateViews()
         }
     }
 
+    let options: KingfisherOptionsInfo = [.transition(.fade(0.5))]
+
     var imageView: UIImageView!
+    var overlayView: UIView!
     var titleLabel: UILabel!
 
     // MARK: Initializers
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+
+        self.contentView.layer.cornerRadius = 10.0
+        self.contentView.layer.masksToBounds = true
+
+        addSubviews()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -26,17 +34,17 @@ class PhotoCell: UICollectionViewCell {
     // MARK: View Lifecycle
 
     override func prepareForReuse() {
-        self.contentView.backgroundColor = .lightGray
-        imageView = nil
+        super.prepareForReuse()
+
         titleLabel.text = nil
+        imageView.image = nil
     }
 
     // MARK: Private
 
-    private func prepareLayout() {
-        let options: KingfisherOptionsInfo = [.transition(.fade(0.5))]
+    private func addSubviews() {
+        // Image view
         imageView = UIImageView()
-        imageView.kf.setImage(with: viewModel.thumbnailURL, options: options)
         imageView.translatesAutoresizingMaskIntoConstraints = false
 
         self.contentView.addSubview(imageView)
@@ -46,7 +54,8 @@ class PhotoCell: UICollectionViewCell {
                                      imageView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
                                      imageView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor)])
 
-        let overlayView = UIView()
+        // Overlay view
+        overlayView = UIView()
         overlayView.backgroundColor = .black
         overlayView.layer.opacity = 0.5
         overlayView.translatesAutoresizingMaskIntoConstraints = false
@@ -58,8 +67,8 @@ class PhotoCell: UICollectionViewCell {
                                      overlayView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor),
                                      overlayView.heightAnchor.constraint(equalToConstant: 60.0)])
 
+        // Title label
         titleLabel = UILabel()
-        titleLabel.text = viewModel.title
         titleLabel.numberOfLines = 4
         titleLabel.textAlignment = .center
         titleLabel.textColor = .white
@@ -72,5 +81,10 @@ class PhotoCell: UICollectionViewCell {
                                      titleLabel.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor, constant: -2.0),
                                      titleLabel.topAnchor.constraint(equalTo: overlayView.topAnchor, constant: 2.0),
                                      titleLabel.centerXAnchor.constraint(equalTo: overlayView.centerXAnchor)])
+    }
+
+    private func updateViews() {
+        imageView.kf.setImage(with: viewModel.thumbnailURL, options: options)
+        titleLabel.text = viewModel.title
     }
 }
