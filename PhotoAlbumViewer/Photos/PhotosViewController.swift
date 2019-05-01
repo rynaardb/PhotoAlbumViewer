@@ -4,7 +4,7 @@ import UIKit
 
 private let reuseIdentifier = "PhotoCell"
 
-class PhotosViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class PhotosViewController: UICollectionViewController {
     weak var coordinator: MainCoordinator?
     private var photos = [Photo]()
     var cellSize = CGSize.zero
@@ -57,15 +57,19 @@ class PhotosViewController: UICollectionViewController, UICollectionViewDelegate
         return cell
     }
 
+    // MARK: UICollectionViewDelegate
+
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photo = self.photos[indexPath.row]
+
+        self.coordinator?.showPhotoDetails(viewModel: PhotoViewModel(model: photo))
+    }
+}
+
+extension PhotosViewController: UICollectionViewDelegateFlowLayout {
     // MARK: UICollectionViewDelegateFlowLayout
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 150, height: 150)
-    }
-
-    // MARK: UICollectionViewDelegate
-
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TODO: Wire up coordinator here
     }
 }

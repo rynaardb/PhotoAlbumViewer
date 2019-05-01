@@ -5,6 +5,10 @@ import Foundation
 struct PhotoViewModel {
     private let model: Photo!
 
+    var photoIdString: String {
+        return "Photo ID: \(model.id)"
+    }
+
     var title: String {
         return model.title
     }
