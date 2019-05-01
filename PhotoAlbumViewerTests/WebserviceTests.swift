@@ -21,7 +21,7 @@ class WebserviceTests: XCTestCase {
     }
 
     func testLoadResource() {
-        let resource = Resource<[Album]>(path: "albums")
+        let resource = Resource<[Album]>(path: "/albums")
         
         let exp = expectation(description: "Load albums resource")
 
