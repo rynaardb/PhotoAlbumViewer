@@ -25,7 +25,6 @@
 		F105237C22772B74007FB494 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F105237B22772B74007FB494 /* AppDelegate.swift */; };
 		F105237E22772B76007FB494 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F105237D22772B76007FB494 /* Assets.xcassets */; };
 		F105238122772B76007FB494 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F105237F22772B76007FB494 /* LaunchScreen.storyboard */; };
-		F1CEB18C22772D17004F5751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1CEB18B22772D17004F5751 /* Main.storyboard */; };
 		F1CEB18E22772E24004F5751 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CEB18D22772E24004F5751 /* AlbumViewController.swift */; };
 		F1CEB19422772F75004F5751 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CEB19322772F75004F5751 /* Album.swift */; };
 		F1CEB19622773008004F5751 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CEB19522773008004F5751 /* Photo.swift */; };
@@ -68,7 +67,6 @@
 		F105238222772B76007FB494 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F105238722772B76007FB494 /* PhotoAlbumViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoAlbumViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F105238D22772B76007FB494 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F1CEB18B22772D17004F5751 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F1CEB18D22772E24004F5751 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		F1CEB19322772F75004F5751 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		F1CEB19522773008004F5751 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
@@ -182,7 +180,6 @@
 				F105237B22772B74007FB494 /* AppDelegate.swift */,
 				F105237D22772B76007FB494 /* Assets.xcassets */,
 				F105237F22772B76007FB494 /* LaunchScreen.storyboard */,
-				F1CEB18B22772D17004F5751 /* Main.storyboard */,
 				F105238222772B76007FB494 /* Info.plist */,
 			);
 			path = PhotoAlbumViewer;
@@ -302,7 +299,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1CEB18C22772D17004F5751 /* Main.storyboard in Resources */,
 				F105237E22772B76007FB494 /* Assets.xcassets in Resources */,
 				F105238122772B76007FB494 /* LaunchScreen.storyboard in Resources */,
 			);
