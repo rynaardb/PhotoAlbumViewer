@@ -37,7 +37,7 @@ class AlbumViewController: UICollectionViewController {
 
         self.collectionView!.register(AlbumCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
-        self.collectionView.backgroundColor = Theme.Colors.darkGray1
+        self.collectionView.backgroundColor = Theme.Colors.darkGray2
         self.title = "Albums"
     }
 

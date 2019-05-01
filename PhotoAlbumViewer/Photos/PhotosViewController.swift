@@ -37,7 +37,7 @@ class PhotosViewController: UICollectionViewController {
 
         self.collectionView!.register(PhotoCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
-        self.collectionView.backgroundColor = Theme.Colors.darkGray1
+        self.collectionView.backgroundColor = Theme.Colors.darkGray2
         self.title = "Photos"
     }
 

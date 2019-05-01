@@ -22,7 +22,7 @@ class AlbumCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        self.contentView.backgroundColor = UIColor(hue: 0.58, saturation: 0.12, brightness: 0.14, alpha: 1.00)
+        self.contentView.backgroundColor = Theme.Colors.darkGray1
 
         self.contentView.layer.cornerRadius = 10.0
         self.contentView.layer.masksToBounds = true

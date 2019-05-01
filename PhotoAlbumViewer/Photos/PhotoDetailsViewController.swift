@@ -27,7 +27,7 @@ class PhotoDetailsViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = viewModel.photoIdString
-        self.view.backgroundColor = Theme.Colors.darkGray1
+        self.view.backgroundColor = Theme.Colors.darkGray2
 
         prepareLayout()
     }
